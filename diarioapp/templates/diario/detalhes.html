@@ -1,0 +1,23 @@
+{% extends 'base/model.html' %}
+
+{% block content %}
+
+    <div class="col-md-8">
+        {% if request.user.is_staff %}
+            <h3> Você é um Staff
+                <br>
+                Login feito as {{data_atual}}
+             </h3>
+        {% else %}
+        <h3> Seja Bem Vindo  {{request.user}} | Login feito as {{data_atual}}</h3 >
+        {% endif %}
+        <div class="card">
+            <div class="card-header"> Quantidade de Diarios </div>
+            <div class="card-body">
+                {{diario_quantidade}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
